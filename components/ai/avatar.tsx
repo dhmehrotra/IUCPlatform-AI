@@ -133,7 +133,7 @@ export function AIAvatar() {
           <div className="bg-primary text-white p-4 rounded-t-xl flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Bot className="h-5 w-5" />
-              <h3 className="font-medium">{persona === "driver" ? "AI Updates" : "AI Copilot"}</h3>
+              <h3 className="font-medium">AI Updates</h3>
             </div>
             <Badge variant="outline" className="bg-white/20 text-white border-white/30">
               {recentChanges.length} recent actions
@@ -162,7 +162,7 @@ export function AIAvatar() {
           </div>
           <div className="p-3 bg-gray-50 rounded-b-xl border-t">
             <Button variant="outline" size="sm" className="w-full rounded-lg">
-              {persona === "driver" ? "View All AI Updates" : "View All AI Activity"}
+              View All AI Updates
             </Button>
           </div>
         </PopoverContent>

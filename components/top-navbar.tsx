@@ -10,7 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Badge } from "@/components/ui/badge"
 import { useSearchParams } from "next/navigation"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { AICopilotContainer } from "./ai/copilot-container"
+import { AIUpdatesContainer } from "./ai/ai-updates-container"
 
 interface TopNavbarProps {
   role: UserRole
@@ -130,7 +130,7 @@ export function TopNavbar({ role, onRoleChange }: TopNavbarProps) {
                 >
                   <div className="flex items-center gap-2">
                     <Bot className="h-4 w-4 text-primary" />
-                    <span>{persona === "driver" ? "AI Updates" : "AI Copilot"}</span>
+                    <span>AI Updates</span>
                     <Badge className="bg-primary/20 text-primary border-primary/30 text-xs">
                       {getAINotificationCount()}
                     </Badge>
@@ -224,10 +224,10 @@ export function TopNavbar({ role, onRoleChange }: TopNavbarProps) {
           <DialogHeader className="bg-primary text-white p-4 rounded-t-xl">
             <DialogTitle className="flex items-center gap-2">
               <Bot className="h-5 w-5" />
-              {persona === "driver" ? "AI Updates" : "AI Copilot"}
+              AI Updates
             </DialogTitle>
           </DialogHeader>
-          <AICopilotContainer />
+          <AIUpdatesContainer />
         </DialogContent>
       </Dialog>
     </header>
