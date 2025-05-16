@@ -1,0 +1,15 @@
+export type UserRole = "client-admin" | "iuc-ops" | "driver"
+
+export type SidebarItem =
+  | "dashboard"
+  | "stations"
+  | "users"
+  | "pricing"
+  | "reports"
+  | "settings"
+  | "network-monitor"
+  | "incident-tracker"
+  | "remote-actions"
+  | "firmware-updates"
+  | "driver-interface"
+  | "partners"

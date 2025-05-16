@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Updated primary color to Electric Blue */
+    --primary: 224 100% 56%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Updated destructive color to Bright Red */
+    --destructive: 357 100% 59%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 224 100% 56%;
+
+    --radius: 1rem;
+
+    /* Updated success color to Teal Green */
+    --success: 160 100% 39%;
+    --success-foreground: 210 40% 98%;
+
+    /* Updated warning color to Amber */
+    --warning: 42 100% 56%;
+    --warning-foreground: 210 40% 98%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 224 100% 56%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 357 100% 59%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224 100% 56%;
+
+    --success: 160 100% 39%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 42 100% 56%;
+    --warning-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Update the custom animations section with more modern animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px theme("colors.primary.DEFAULT");
+  }
+  50% {
+    box-shadow: 0 0 15px theme("colors.primary.DEFAULT");
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-progress {
+  animation: progress 30s linear forwards;
+}
+
+/* Custom utility classes */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-gray-900 to-gray-800 bg-opacity-90;
+}
+
+.active-nav-item {
+  @apply border-l-4 border-primary transition-all duration-300;
+}
+
+.status-dot {
+  @apply inline-block w-2.5 h-2.5 rounded-full mr-2;
+}
+
+/* Fix: Use direct CSS properties instead of @apply for custom colors */
+.status-dot-success {
+  background-color: hsl(var(--success));
+  box-shadow: 0 0 5px hsl(var(--success));
+}
+
+.status-dot-warning {
+  background-color: hsl(var(--warning));
+  box-shadow: 0 0 5px hsl(var(--warning));
+}
+
+.status-dot-error {
+  background-color: hsl(var(--destructive));
+  box-shadow: 0 0 5px hsl(var(--destructive));
+}
+
+/* Add gradient backgrounds */
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #1e5eff 0%, #56ccf2 100%);
+}
+
+.bg-gradient-green {
+  background: linear-gradient(135deg, #00c48c 0%, #27ae60 100%);
+}
+
+.bg-gradient-amber {
+  background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(135deg, #9b51e0 0%, #6b3fa0 100%);
+}
+
+/* Chart styles */
+.area-chart-gradient {
+  fill: url(#areaGradient);
+}
